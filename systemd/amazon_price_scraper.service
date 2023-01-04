@@ -7,7 +7,7 @@ After=network.target
 Environment=NODE_PORT=3000
 Type=simple
 User=ec2-user
-ExecStart=/home/ec2-user/.nvm/versions/node/v17.3.0/bin/node /home/ec2-user/amazon_price_scraper/scrape.js
+ExecStart=bash /home/ec2-user/amazon_price_scraper/start.sh
 Restart=on-failure
 
 [Install]
