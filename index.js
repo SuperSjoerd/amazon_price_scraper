@@ -12,6 +12,12 @@ app.get('/get-data', (req, res) => {
     });
 });
 
+app.get('/last-price', (req, res) => {
+    db.all('SELECT price FROM itemprices ORDER BY id DESC LIMIT 1', [], async (err, items) => {
+        res.json(items[0].price);
+    });
+})
+
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
 });

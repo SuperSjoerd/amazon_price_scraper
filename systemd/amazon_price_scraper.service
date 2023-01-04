@@ -7,7 +7,7 @@ After=network.target
 Environment=NODE_PORT=3000
 Type=simple
 User=ec2-user
-ExecStart=bash /home/ec2-user/amazon_price_scraper/start.sh
+ExecStart=/home/ec2-user/amazon_price_scraper/start.sh
 Restart=on-failure
 
 [Install]

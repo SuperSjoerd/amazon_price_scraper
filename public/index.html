@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koffie prijs</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 </head>
 
 <body>
+    <h1>Huidige prijs: <span id="currentPrice">xx,xx</span></h1>
+    <a target="_blank" href="https://www.amazon.nl/dp/B08DYYJ82S">Ga naar product</a>
     <div>
         <canvas id="myChart"></canvas>
     </div>
@@ -44,6 +47,15 @@
             .then(function () {
                 // always executed
             });
+
+        axios.get('/last-price')
+            .then(function (response) {
+                console.log(response.data);
+                document.querySelector('h1>span#currentPrice').innerText = response.data;
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     </script>
 </body>
 
