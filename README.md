@@ -1,0 +1,1 @@
+"Inspired" by https://betterprogramming.pub/write-a-simple-amazon-price-scraper-with-node-scrape-it-and-sqlite-64e6a7667c91
