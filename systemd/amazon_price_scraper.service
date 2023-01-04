@@ -1,0 +1,14 @@
+[Unit]
+Description=Scrape coffee price from amazon
+Documentation=https://example.com
+After=network.target
+
+[Service]
+Environment=NODE_PORT=3000
+Type=simple
+User=ec2-user
+ExecStart=/home/ec2-user/.nvm/versions/node/v17.3.0/bin/node /home/ec2-user/amazon_price_scraper/scrape.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
